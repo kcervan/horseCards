@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Universal_BirthdateYear__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Date_of_Birth__c),
+Date_of_Birth__c,
+IF(MONTH(Date_of_Birth__c)=2 &amp;&amp; DAY(Date_of_Birth__c)=29,
+DATE(YEAR(Date_of_Birth__c)+1, 2, 28),
+DATE(YEAR(Date_of_Birth__c)+1, MONTH(Date_of_Birth__c), DAY(Date_of_Birth__c)) - 1
+)
+)</formula>
+    <inlineHelpText>Used for formula only!</inlineHelpText>
+    <label>Universal Birthdate Year</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

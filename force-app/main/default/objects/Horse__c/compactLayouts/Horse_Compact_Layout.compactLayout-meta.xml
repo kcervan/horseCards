@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Horse_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Status__c</fields>
+    <fields>Partnership__c</fields>
+    <fields>Location__c</fields>
+    <fields>Race_Horse_Age__c</fields>
+    <fields>Sex__c</fields>
+    <fields>Acquisition_Date__c</fields>
+    <label>Horse Compact Layout</label>
+</CompactLayout>
