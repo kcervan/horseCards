@@ -1,0 +1,10 @@
+I need a Salesforce Lightning Web Component, named horseCards, that displays a list of records within experience cloud.
+
+The component should have the title "Horses". Subtitle should read "
+
+We will display a list of Horse__c records. The Horse__c records will be grouped by Partnership__c. Group using the Accordion lightning design system component. 
+
+For the Horse__c records, use the card component. An image of the horse should be on the left side of the card, the image is stored in the Key_Photo__c field. On the right side of the card list these attributes: Name, Status__c, Location__c, Sex__c. 
+
+Above the list, add a container where the user can filter the records displayed. Add a checkbox button group to filter by Horse.Status__c.
+

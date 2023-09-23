@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Horses">
+        <p class="slds-p-horizontal_small">We do our best to keep all our horse information up-to-date to provide you with the information you need!</p>
+        
+        <!-- Filter Section -->
+        <div class="slds-m-around_medium">
+            <span>Status</span>
+            <lightning-checkbox-group name="StatusFilter" options={Status} value={selectedStatus} onchange={handleStatusChange}></lightning-checkbox-group>
+        </div>
+        <div class="slds-m-around_medium">
+            <span>Partnership Owner</span>
+            <lightning-checkbox-group name="StatusFilter" options={PartnershipOwner} value={selectedStatus} onchange={handleStatusChange}></lightning-checkbox-group>
+        </div>
+        <div class="slds-m-around_medium">
+            <span>Partnerships</span>
+        </div>
+        <!-- Accordion for Partnership -->
+        <lightning-accordion allow-multiple-sections-open active-section-name="A">
+            <template for:each={horsesGroupedByPartnership} for:item="group">
+                <lightning-accordion-section key={group.partnership} name={group.partnership} label={group.partnership}>
+                    <template for:each={group.horses} for:item="horse">
+                        <div key={horse.Id} class="slds-m-bottom_small">
+                            <lightning-card>
+                                <img src={horse.Photo_URL__c} alt="Horse Photo">
+                                <div>
+                                    <div>Name: {horse.Name}</div>
+                                    <div>Status: {horse.Status__c}</div>
+                                    <div>Location: {horse.Location__c}</div>
+                                    <div>Sex: {horse.Sex__c}</div>
+                                </div>
+                            </lightning-card>
+                        </div>
+                    </template>
+                </lightning-accordion-section>
+            </template>
+        </lightning-accordion>
+    </lightning-card>
+</template>

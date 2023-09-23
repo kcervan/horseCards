@@ -1,0 +1,40 @@
+/* Apply a basic padding around the component */
+:host {
+    padding: 1rem;
+}
+
+/* Style for the horse image */
+img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Style for the individual horse details */
+div.slds-m-bottom_small {
+    display: flex;
+    align-items: center;
+}
+
+/* Spacing between image and details */
+img + div {
+    margin-left: 1rem;
+}
+
+/* Style for the filter section */
+.slds-m-around_medium {
+    padding: 1rem;
+    border: 1px solid #e1e8ee;
+    border-radius: 8px;
+}
+
+/* Adding some spacing between filter label and the checkbox group */
+span + lightning-checkbox-group {
+    margin-left: 1rem;
+}
+
+/* Styling for the accordion section */
+lightning-accordion-section {
+    margin-top: 1rem;
+}

@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Horses List" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <template if:true={horses.data}>
+                <div class="slds-grid slds-wrap">
+                    <template for:each={horses.data} for:item="horse">
+                        <div key={horse.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 card-padding">
+                            <lightning-card onclick={navigateToRecordPage} data-id={horse.Id}>
+                                <div class="slds-card__header slds-grid">
+                                    <div class="centered">
+                                        <template if:true={horse.Key_Photo__c}>
+                                            <lightning-formatted-rich-text value={horse.Key_Photo__c}></lightning-formatted-rich-text>
+                                        </template>
+                                        <template if:false={horse.Key_Photo__c}>
+                                            <img src={placeholderImageUrl} alt="IMAGE COMING SOON" width="100%" height="auto" />
+                                        </template>
+                                    </div>
+                                </div>
+                                <div class="slds-card__body slds-card__body_inner">
+                                    <p><b>Name:</b> {horse.Name}</p>
+                                    <p><b>Partnership:</b> {horse.PartnershipFormula__c}</p>
+                                    <p><b>Status:</b> {horse.Status__c}</p>
+                                    <p><b>Sex:</b> {horse.Sex__c}</p>
+                                    <p><b>Location:</b> {horse.Location__c}</p>
+                                </div>
+                            </lightning-card>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <template if:true={horses.error}>
+                <div class="slds-text-color_error">{horses.error}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
